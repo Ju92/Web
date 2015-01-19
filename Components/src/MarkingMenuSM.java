@@ -13,6 +13,7 @@ import fr.lri.swingstates.sm.transitions.Press;
 import java.awt.Component;
 import java.awt.Point;
 import java.awt.geom.Point2D;
+import java.util.ArrayList;
 
 /*
  Machine à état contrôlant le comportement du marking menu
@@ -21,15 +22,21 @@ import java.awt.geom.Point2D;
  *
  * @author Juliette
  */
-public class MarkingMenuSM extends CStateMachine{
+public class MarkingMenuSM extends CStateMachine {
 
-    
+    private Menu menu;
+    private ArrayList<MenuItem> listItems;
     private Component selectedComponent;
     private Point2D markingMenuCenter;
+    private Point2D newPoint;
 
     public MarkingMenuSM(Menu menu) {
         super();
+        this.menu = menu;
         markingMenuCenter = new Point();
+        newPoint = new Point();
+        listItems = menu.getListItem();
+
     }
     /**
      * INIT.
@@ -45,7 +52,8 @@ public class MarkingMenuSM extends CStateMachine{
             @Override
             public void action() {
                 markingMenuCenter = getPoint();
-                //apparition du marking menu
+                // if timer ?
+                menu.show();
             }
         };
     };
@@ -57,12 +65,14 @@ public class MarkingMenuSM extends CStateMachine{
         Transition mouseDrag = new Drag(">> Dragging") {
             @Override
             public boolean guard() {
-                return false; //true quand on détecte un mouvement
+                newPoint = getPoint();
+                //true quand on détecte un mouvement > 20, un peu d'hystérèse...
+                return (newPoint.distance(markingMenuCenter)>20); 
             }
 
             @Override
             public void action() {
-                //
+                
             }
         };
     };
@@ -83,7 +93,7 @@ public class MarkingMenuSM extends CStateMachine{
                 selectedComponent = getComponent();
             }
         };
-        
+
     };
 
 }
