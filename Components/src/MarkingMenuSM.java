@@ -6,9 +6,13 @@
 
 import fr.lri.swingstates.canvas.CShape;
 import fr.lri.swingstates.canvas.CStateMachine;
-import fr.lri.swingstates.canvas.transitions.PressOnShape;
 import fr.lri.swingstates.sm.State;
 import fr.lri.swingstates.sm.Transition;
+import fr.lri.swingstates.sm.transitions.Drag;
+import fr.lri.swingstates.sm.transitions.Press;
+import fr.lri.swingstates.sm.transitions.Release;
+import org.w3c.dom.events.EventTarget;
+import org.w3c.dom.views.AbstractView;
 
 /*
  Machine à état contrôlant le comportement du marking menu
@@ -27,10 +31,10 @@ public class MarkingMenuSM extends CStateMachine {
      */
     public State Init = new State() {
         // Press of the pen on the left part of the strip
-        Transition mousePress = new PressOnShape(BUTTON1, ">> Pressing") {
+        Transition mousePress = new Press(">> Pressing") {
             @Override
             public boolean guard() {
-                return false;
+                return false; // true quand on détecte un press
             }
 
             @Override
@@ -43,10 +47,10 @@ public class MarkingMenuSM extends CStateMachine {
      */
     public State Pressing = new State() {
         // Press of the pen on the left part of the strip
-        Transition mousePress = new PressOnShape(BUTTON1, ">> Dragging") {
+        Transition mousePress = new Drag(">> Dragging") {
             @Override
             public boolean guard() {
-                return false;
+                return false; //true quand on détecte un mouvement
             }
 
             @Override
@@ -59,10 +63,10 @@ public class MarkingMenuSM extends CStateMachine {
      */
     public State Dragging = new State() {
         // Press of the pen on the left part of the strip
-        Transition mousePress = new PressOnShape(BUTTON1, ">> Init") {
+        Transition mousePress = new Release(">> Init") {
             @Override
             public boolean guard() {
-                return false;
+                return false; //true quand on détecte un release
             }
 
             @Override
