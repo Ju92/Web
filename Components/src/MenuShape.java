@@ -1,4 +1,6 @@
 
+import java.awt.Graphics;
+import java.awt.Point;
 import javax.swing.JComponent;
 
 /*
@@ -21,6 +23,7 @@ public class MenuShape extends JComponent {
     private double externalRayon;
     private double alpha;
     private double theta;
+    private Point center;
 
     public MenuShape(double internalRayon,
             double externalRayon,
@@ -31,10 +34,16 @@ public class MenuShape extends JComponent {
         this.externalRayon = externalRayon;
         this.theta = theta;
         this.alpha = alpha;
+        center = new Point(0, 0);
+    }
+
+    @Override
+    public void paint(Graphics g) {
+
     }
 
     public MenuShape() {
-        this(DEFAULT_R1,DEFAULT_R2,DEFAULT_ALPHA, DEFAULT_THETA);
+        this(DEFAULT_R1, DEFAULT_R2, DEFAULT_ALPHA, DEFAULT_THETA);
     }
 
     /**
@@ -91,5 +100,47 @@ public class MenuShape extends JComponent {
      */
     public void setTheta(double theta) {
         this.theta = theta;
+    }
+
+    /**
+     * @return the center
+     */
+    public Point getCenter() {
+        return center;
+    }
+
+    /**
+     * @param center the center to set
+     */
+    public void setCenter(Point center) {
+        this.center = center;
+    }
+
+    /**
+     * @return the DEFAULT_R1
+     */
+    public static double getDEFAULT_INTERNAL_RAYON() {
+        return DEFAULT_R1;
+    }
+
+    /**
+     * @return the DEFAULT_R2
+     */
+    public static double getDEFAULT_EXTERNAL_RAYON() {
+        return DEFAULT_R2;
+    }
+
+    /**
+     * @return the DEFAULT_THETA
+     */
+    public static double getDEFAULT_THETA() {
+        return DEFAULT_THETA;
+    }
+
+    /**
+     * @return the DEFAULT_ALPHA
+     */
+    public static double getDEFAULT_ALPHA() {
+        return DEFAULT_ALPHA;
     }
 }
