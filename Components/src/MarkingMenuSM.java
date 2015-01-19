@@ -35,6 +35,7 @@ public class MarkingMenuSM extends CStateMachine {
         this.menu = menu;
         markingMenuCenter = new Point();
         newPoint = new Point();
+        listItems = menu.getListItem();
 
     }
     /**
