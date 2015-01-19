@@ -20,11 +20,20 @@ public class Menu {
 
     //apparition du menu
     public void show() {
-
+    }
+    //disparition du menu
+    public void hide(){
     }
 
-    //apparition du menu
     public ArrayList<MenuItem> getListItems() {
         return listItems;
+    }
+
+    //selection d'un des items du menu -> application de son effet
+    public void selectItem(MenuItem item) {
+    }
+    
+     //highlight d'un des items du menu
+    public void setHighlightItem(MenuItem item) {
     }
 }
