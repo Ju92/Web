@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 
-import fr.lri.swingstates.canvas.CShape;
 import fr.lri.swingstates.canvas.CStateMachine;
 import fr.lri.swingstates.sm.State;
 import fr.lri.swingstates.sm.Transition;
@@ -12,6 +11,8 @@ import fr.lri.swingstates.sm.jtransitions.ReleaseOnComponent;
 import fr.lri.swingstates.sm.transitions.Drag;
 import fr.lri.swingstates.sm.transitions.Press;
 import java.awt.Component;
+import java.awt.Point;
+import java.awt.geom.Point2D;
 
 /*
  Machine à état contrôlant le comportement du marking menu
@@ -20,12 +21,15 @@ import java.awt.Component;
  *
  * @author Juliette
  */
-public class MarkingMenuSM extends CStateMachine {
+public class MarkingMenuSM extends CStateMachine{
 
+    
     private Component selectedComponent;
+    private Point2D markingMenuCenter;
 
-    public MarkingMenuSM() {
+    public MarkingMenuSM(Menu menu) {
         super();
+        markingMenuCenter = new Point();
     }
     /**
      * INIT.
@@ -35,11 +39,12 @@ public class MarkingMenuSM extends CStateMachine {
         Transition mousePress = new Press(">> Pressing") {
             @Override
             public boolean guard() {
-                return false; // true quand on détecte un press
+                return false;
             }
 
             @Override
             public void action() {
+                markingMenuCenter = getPoint();
                 //apparition du marking menu
             }
         };
@@ -78,6 +83,7 @@ public class MarkingMenuSM extends CStateMachine {
                 selectedComponent = getComponent();
             }
         };
+        
     };
 
 }
