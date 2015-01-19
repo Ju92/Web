@@ -7,6 +7,7 @@
 import fr.lri.swingstates.canvas.CStateMachine;
 import fr.lri.swingstates.sm.State;
 import fr.lri.swingstates.sm.Transition;
+import fr.lri.swingstates.sm.jtransitions.DragOnComponent;
 import fr.lri.swingstates.sm.jtransitions.ReleaseOnComponent;
 import fr.lri.swingstates.sm.transitions.Drag;
 import fr.lri.swingstates.sm.transitions.Press;
@@ -26,16 +27,17 @@ public class MarkingMenuSM extends CStateMachine {
 
     private Menu menu;
     private ArrayList<MenuItem> listItems;
-    private Component selectedComponent;
+    private MenuItem selectedComponent;
     private Point2D markingMenuCenter;
     private Point2D newPoint;
 
     public MarkingMenuSM(Menu menu) {
         super();
         this.menu = menu;
+        listItems = menu.getListItems();
         markingMenuCenter = new Point();
         newPoint = new Point();
-        listItems = menu.getListItem();
+        selectedComponent = null;
 
     }
     /**
@@ -67,12 +69,11 @@ public class MarkingMenuSM extends CStateMachine {
             public boolean guard() {
                 newPoint = getPoint();
                 //true quand on détecte un mouvement > 20, un peu d'hystérèse...
-                return (newPoint.distance(markingMenuCenter)>20); 
+                return (newPoint.distance(markingMenuCenter) > 20);
             }
 
             @Override
             public void action() {
-                
             }
         };
     };
@@ -81,16 +82,32 @@ public class MarkingMenuSM extends CStateMachine {
      */
     public State Dragging = new State() {
         // Press of the pen on the left part of the strip
-        Transition mousePress = new ReleaseOnComponent(BUTTON1, ">> Init") {
+        Transition move = new DragOnComponent(BUTTON1) {
             @Override
             public boolean guard() {
-                return false; //true quand on détecte un release
+                return false; //true tant qu'on est en mode press
+            }
+
+            @Override
+            public void action() {
+                selectedComponent = (MenuItem) getComponent();
+                //on highlight les menuItems survolés du marking menu
+                menu.setHighlightItem(selectedComponent);
+                
+            }
+        };
+        Transition mouseMrelease = new ReleaseOnComponent(BUTTON1, ">> Init") {
+            @Override
+            public boolean guard() {
+                return false; // true quand on release sur un menuItem
             }
 
             @Override
             public void action() {
                 //disparition de marking menu et actionne le bouton sur lequel il release
-                selectedComponent = getComponent();
+                selectedComponent = (MenuItem) getComponent();
+                menu.selectItem(selectedComponent);
+                menu.hide();
             }
         };
 
