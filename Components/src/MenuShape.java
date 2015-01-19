@@ -14,24 +14,20 @@ import javax.swing.JComponent;
  */
 public class MenuShape extends JComponent {
 
-    private static final double DEFAULT_R1 = 0;
-    private static final double DEFAULT_R2 = 100;
+    private static final double DEFAULT_RAYON = 100;
     private static final double DEFAULT_THETA = 0;
     private static final double DEFAULT_ALPHA = 45;
 
-    private double internalRayon;
-    private double externalRayon;
+    private double rayon;
     private double alpha;
     private double theta;
     private Point center;
 
-    public MenuShape(double internalRayon,
-            double externalRayon,
+    public MenuShape(double rRayon,
             double alpha,
             double theta) {
         super();
-        this.internalRayon = internalRayon;
-        this.externalRayon = externalRayon;
+        this.rayon = rayon;
         this.theta = theta;
         this.alpha = alpha;
         center = new Point(0, 0);
@@ -39,39 +35,25 @@ public class MenuShape extends JComponent {
 
     @Override
     public void paint(Graphics g) {
-
+        g.fi
     }
 
     public MenuShape() {
-        this(DEFAULT_R1, DEFAULT_R2, DEFAULT_ALPHA, DEFAULT_THETA);
+        this(DEFAULT_RAYON, DEFAULT_ALPHA, DEFAULT_THETA);
     }
 
     /**
      * @return the internalRayon
      */
-    public double getInternalRayon() {
-        return internalRayon;
+    public double getRayon() {
+        return rayon;
     }
 
     /**
      * @param internalRayon the internalRayon to set
      */
-    public void setInternalRayon(double internalRayon) {
-        this.internalRayon = internalRayon;
-    }
-
-    /**
-     * @return the externalRayon
-     */
-    public double getExternalRayon() {
-        return externalRayon;
-    }
-
-    /**
-     * @param externalRayon the externalRayon to set
-     */
-    public void setExternalRayon(double externalRayon) {
-        this.externalRayon = externalRayon;
+    public void setRayon(double rayon) {
+        this.rayon = rayon;
     }
 
     /**
@@ -119,28 +101,7 @@ public class MenuShape extends JComponent {
     /**
      * @return the DEFAULT_R1
      */
-    public static double getDEFAULT_INTERNAL_RAYON() {
-        return DEFAULT_R1;
-    }
-
-    /**
-     * @return the DEFAULT_R2
-     */
-    public static double getDEFAULT_EXTERNAL_RAYON() {
-        return DEFAULT_R2;
-    }
-
-    /**
-     * @return the DEFAULT_THETA
-     */
-    public static double getDEFAULT_THETA() {
-        return DEFAULT_THETA;
-    }
-
-    /**
-     * @return the DEFAULT_ALPHA
-     */
-    public static double getDEFAULT_ALPHA() {
-        return DEFAULT_ALPHA;
+    public static double getDEFAULT__RAYON() {
+        return DEFAULT_RAYON;
     }
 }
