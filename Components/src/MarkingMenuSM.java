@@ -8,11 +8,10 @@ import fr.lri.swingstates.canvas.CShape;
 import fr.lri.swingstates.canvas.CStateMachine;
 import fr.lri.swingstates.sm.State;
 import fr.lri.swingstates.sm.Transition;
+import fr.lri.swingstates.sm.jtransitions.ReleaseOnComponent;
 import fr.lri.swingstates.sm.transitions.Drag;
 import fr.lri.swingstates.sm.transitions.Press;
-import fr.lri.swingstates.sm.transitions.Release;
-import org.w3c.dom.events.EventTarget;
-import org.w3c.dom.views.AbstractView;
+import java.awt.Component;
 
 /*
  Machine à état contrôlant le comportement du marking menu
@@ -23,7 +22,9 @@ import org.w3c.dom.views.AbstractView;
  */
 public class MarkingMenuSM extends CStateMachine {
 
-    public MarkingMenuSM(CShape shape) {
+    private Component selectedComponent;
+
+    public MarkingMenuSM() {
         super();
     }
     /**
@@ -39,6 +40,7 @@ public class MarkingMenuSM extends CStateMachine {
 
             @Override
             public void action() {
+                //apparition du marking menu
             }
         };
     };
@@ -47,7 +49,7 @@ public class MarkingMenuSM extends CStateMachine {
      */
     public State Pressing = new State() {
         // Press of the pen on the left part of the strip
-        Transition mousePress = new Drag(">> Dragging") {
+        Transition mouseDrag = new Drag(">> Dragging") {
             @Override
             public boolean guard() {
                 return false; //true quand on détecte un mouvement
@@ -55,6 +57,7 @@ public class MarkingMenuSM extends CStateMachine {
 
             @Override
             public void action() {
+                //
             }
         };
     };
@@ -63,7 +66,7 @@ public class MarkingMenuSM extends CStateMachine {
      */
     public State Dragging = new State() {
         // Press of the pen on the left part of the strip
-        Transition mousePress = new Release(">> Init") {
+        Transition mousePress = new ReleaseOnComponent(BUTTON1, ">> Init") {
             @Override
             public boolean guard() {
                 return false; //true quand on détecte un release
@@ -71,6 +74,8 @@ public class MarkingMenuSM extends CStateMachine {
 
             @Override
             public void action() {
+                //disparition de marking menu et actionne le bouton sur lequel il release
+                selectedComponent = getComponent();
             }
         };
     };
