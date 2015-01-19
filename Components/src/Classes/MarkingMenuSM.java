@@ -1,9 +1,13 @@
+package Classes;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
+import Classes.Menu;
+import Classes.MenuItem;
 import fr.lri.swingstates.canvas.CStateMachine;
 import fr.lri.swingstates.sm.State;
 import fr.lri.swingstates.sm.Transition;

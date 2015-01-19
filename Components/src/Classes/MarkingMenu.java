@@ -1,5 +1,4 @@
-
-import javax.swing.JLayeredPane;
+package Classes;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -11,6 +10,6 @@ import javax.swing.JLayeredPane;
  *
  * @author Juliette
  */
-public class MenuItem extends JLayeredPane {
-    
+public class MarkingMenu {
+   //tous les champs sont privés et on a un constructeur vide => pour faire un component 
 }
