@@ -1,4 +1,5 @@
 
+import java.awt.Graphics;
 import java.awt.Point;
 import javax.swing.JComponent;
 
@@ -33,14 +34,16 @@ public class MenuShape extends JComponent {
         this.externalRayon = externalRayon;
         this.theta = theta;
         this.alpha = alpha;
-        center = new Point(0,0);
+        center = new Point(0, 0);
     }
-    
+
     @Override
-    public void 
+    public void paint(Graphics g) {
+
+    }
 
     public MenuShape() {
-        this(DEFAULT_R1,DEFAULT_R2,DEFAULT_ALPHA, DEFAULT_THETA);
+        this(DEFAULT_R1, DEFAULT_R2, DEFAULT_ALPHA, DEFAULT_THETA);
     }
 
     /**
@@ -112,7 +115,7 @@ public class MenuShape extends JComponent {
     public void setCenter(Point center) {
         this.center = center;
     }
-    
+
     /**
      * @return the DEFAULT_R1
      */
