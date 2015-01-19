@@ -35,6 +35,9 @@ public class MenuShape extends JComponent {
         this.alpha = alpha;
         center = new Point(0,0);
     }
+    
+    @Override
+    public void 
 
     public MenuShape() {
         this(DEFAULT_R1,DEFAULT_R2,DEFAULT_ALPHA, DEFAULT_THETA);
@@ -108,5 +111,33 @@ public class MenuShape extends JComponent {
      */
     public void setCenter(Point center) {
         this.center = center;
+    }
+    
+    /**
+     * @return the DEFAULT_R1
+     */
+    public static double getDEFAULT_INTERNAL_RAYON() {
+        return DEFAULT_R1;
+    }
+
+    /**
+     * @return the DEFAULT_R2
+     */
+    public static double getDEFAULT_EXTERNAL_RAYON() {
+        return DEFAULT_R2;
+    }
+
+    /**
+     * @return the DEFAULT_THETA
+     */
+    public static double getDEFAULT_THETA() {
+        return DEFAULT_THETA;
+    }
+
+    /**
+     * @return the DEFAULT_ALPHA
+     */
+    public static double getDEFAULT_ALPHA() {
+        return DEFAULT_ALPHA;
     }
 }
