@@ -1,4 +1,5 @@
 
+import java.awt.Point;
 import javax.swing.JComponent;
 
 /*
@@ -21,6 +22,7 @@ public class MenuShape extends JComponent {
     private double externalRayon;
     private double alpha;
     private double theta;
+    private Point center;
 
     public MenuShape(double internalRayon,
             double externalRayon,
@@ -31,6 +33,7 @@ public class MenuShape extends JComponent {
         this.externalRayon = externalRayon;
         this.theta = theta;
         this.alpha = alpha;
+        center = new Point(0,0);
     }
 
     public MenuShape() {
@@ -91,5 +94,19 @@ public class MenuShape extends JComponent {
      */
     public void setTheta(double theta) {
         this.theta = theta;
+    }
+
+    /**
+     * @return the center
+     */
+    public Point getCenter() {
+        return center;
+    }
+
+    /**
+     * @param center the center to set
+     */
+    public void setCenter(Point center) {
+        this.center = center;
     }
 }
