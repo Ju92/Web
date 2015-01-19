@@ -8,12 +8,6 @@
  *
  * @author Juliette
  */
-public class Menu {
+public class MenuItem {
     
-    
-    
-    //apparition du menu
-    public void show(){
-        
-    }
 }
