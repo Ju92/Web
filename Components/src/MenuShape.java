@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 import javax.swing.JComponent;
@@ -23,7 +24,7 @@ public class MenuShape extends JComponent {
     private double theta;
     private Point center;
 
-    public MenuShape(double rRayon,
+    public MenuShape(double rayon,
             double alpha,
             double theta) {
         super();
@@ -33,15 +34,21 @@ public class MenuShape extends JComponent {
         center = new Point(0, 0);
     }
 
-    @Override
-    public void paint(Graphics g) {
-        g.fi
-    }
-
     public MenuShape() {
         this(DEFAULT_RAYON, DEFAULT_ALPHA, DEFAULT_THETA);
     }
 
+    
+    @Override
+    public void paint(Graphics g) {
+        g.setColor(Color.gray);
+        g.fillArc(center.x - (int) rayon / 2,
+                center.y - (int) rayon / 2,
+                (int) rayon, (int) rayon,
+                (int) theta, (int) alpha);
+    }
+
+    
     /**
      * @return the internalRayon
      */
