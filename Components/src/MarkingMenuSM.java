@@ -92,14 +92,14 @@ public class MarkingMenuSM extends CStateMachine {
             public void action() {
                 selectedComponent = (MenuItem) getComponent();
                 //on highlight les menuItems survolés du marking menu
-                menu.setHighlightItem(selectedComponent);
+                menu.highlightItem(selectedComponent);
                 
             }
         };
         Transition mouseMrelease = new ReleaseOnComponent(BUTTON1, ">> Init") {
             @Override
             public boolean guard() {
-                return false; // true quand on release sur un menuItem
+                return true; // true quand on release sur un menuItem
             }
 
             @Override

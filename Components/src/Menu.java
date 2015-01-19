@@ -34,6 +34,6 @@ public class Menu {
     }
     
      //highlight d'un des items du menu
-    public void setHighlightItem(MenuItem item) {
+    public void highlightItem(MenuItem item) {
     }
 }
