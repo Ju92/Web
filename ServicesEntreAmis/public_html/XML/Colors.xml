@@ -7,5 +7,15 @@ and open the template in the editor.
 
 
 <root>
-    
+    <resources>
+        <color name="backgroundVert">#7AD97A</color>
+        <color name="backgroundBleu">#65B3B3</color>
+        <color name="backgroundJaune">#CFF288</color>
+        <color name="middleVert">#2FAF2F</color>
+        <color name="middleBleu">#238383</color>
+        <color name="middleJaune">#9ACC36</color>
+        <color name="darkVert">#057605</color>
+        <color name="darkBleu">#035858</color>
+        <color name="darkJaune">#5D8905</color>
+    </resources>
 </root>
