@@ -10,5 +10,14 @@ and open the template in the editor.
 
 .style_Header{
     background-color: #238383;
+}
+
+.style_Title{
+    color: #CFF288;
     font-family: Segoe UI;
+    padding: 3%;
+}
+
+.style_Button{
+    background-color: #65B3B3;
 }
