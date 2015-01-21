@@ -1,0 +1,36 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20 janv. 2015, 10:08:50
+    Author     : Juliette
+*/
+
+.style_Header{
+    background-color: #238383;
+    width: 60%;
+    height: 100%;
+    margin-left: 20%;
+}
+
+.style_Title{
+    color: #CFF288;
+    font-family: Segoe UI;
+}
+
+.style_Buttons{
+    background-color: #65B3B3;
+}
+
+.style_groupeButton{
+}
+
+.style_Button{
+    background-color: #CFF288;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 2%;
+    
+}
