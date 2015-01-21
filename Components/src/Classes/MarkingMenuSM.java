@@ -5,9 +5,6 @@ package Classes;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-import Classes.Menu;
-import Classes.MenuItem;
 import fr.lri.swingstates.canvas.CStateMachine;
 import fr.lri.swingstates.sm.State;
 import fr.lri.swingstates.sm.Transition;
@@ -15,7 +12,6 @@ import fr.lri.swingstates.sm.jtransitions.DragOnComponent;
 import fr.lri.swingstates.sm.jtransitions.ReleaseOnComponent;
 import fr.lri.swingstates.sm.transitions.Drag;
 import fr.lri.swingstates.sm.transitions.Press;
-import java.awt.Component;
 import java.awt.Point;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
@@ -97,7 +93,7 @@ public class MarkingMenuSM extends CStateMachine {
                 selectedComponent = (MenuItem) getComponent();
                 //on highlight les menuItems survolés du marking menu
                 menu.highlightItem(selectedComponent);
-                
+
             }
         };
         Transition mouseMrelease = new ReleaseOnComponent(BUTTON1, ">> Init") {

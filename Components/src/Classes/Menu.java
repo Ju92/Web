@@ -23,9 +23,15 @@ public class Menu {
 
     //apparition du menu
     public void show() {
+        for(MenuItem item : listItems){
+            //affichage de chaque item selon le découpage du camembert
+        }
     }
     //disparition du menu
     public void hide(){
+        for(MenuItem item : listItems){
+            //cacher chaque item
+        }
     }
 
     public ArrayList<MenuItem> getListItems() {
@@ -34,9 +40,11 @@ public class Menu {
 
     //selection d'un des items du menu -> application de son effet
     public void selectItem(MenuItem item) {
+        
     }
     
      //highlight d'un des items du menu
     public void highlightItem(MenuItem item) {
+        
     }
 }
