@@ -1,0 +1,49 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20 janv. 2015, 10:35:27
+    Author     : rambouju
+*/
+
+.style_filtre{
+    background-color:#65B3B3;
+    padding-left:2%;
+    padding-right:2%;
+    padding-top: 2%;
+    height: 100%;
+    font-family: Segoe UI;
+    box-shadow: 3px 3px lightgray;
+    color: white;
+ 
+    
+}
+h1{
+        font-size:18px;
+}
+.style_contenu_filtre{
+    background-color: white;
+    color: #65B3B3;
+    width: 50%;
+    float: left;
+    padding-left: 2%;
+
+}
+
+.style_boutons_recherche{
+    width: 20%;
+    float: right;
+}
+
+.style_recherche{
+    font-family: Segoe UI;
+    width: 70%;
+
+}
+.style_tableau_resultat{    
+    background-color: #7AD97A;
+        box-shadow: 3px 3px lightgray;
+
+}
