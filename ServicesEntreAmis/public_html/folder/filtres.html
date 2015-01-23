@@ -7,19 +7,24 @@ and open the template in the editor.
 <html>
     <head>
         <title>TODO supply a title</title>
-        <link rel="stylesheet" type="text/css" href="./css/filtrecss.css">
+        <link rel="stylesheet" type="text/css" href="./CSS/rechercheCSS.css">
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
-        <article id="elements_filtres_service">
+    <body >
+        <div class="style_recherche">
+        <article id="elements_filtres_service" class="style_filtre">
                 <h1 id="titre_recherche_service">Titre Filtre</h1>
-                <ul id="item_recherche_service">
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                </ul>
+                <form id="items_filtres" class="style_contenu_filtre">
+                <label> Type de recherche</label>
+                <input type="checkbox" name="filtre" id="filtre1" />
+                <label for ="filtre1">Filtre 1</label>
+                <input type="checkbox" name="filtre" id="filtre2"/>
+                <label for ="filtre2">Filtre 2</label>
+                    
+                </form>
         </article>
+        </div>
     </body>
 </html>
