@@ -10,35 +10,52 @@ and open the template in the editor.
 
 .style_filtre{
     background-color:#65B3B3;
-    padding-left:2%;
-    padding-right:2%;
-    padding-top: 2%;
+
+    margin-right: 2%;
+    margin-top:  2%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    padding-bottom: 2%;    
+    padding-top: 2%;    
+    padding-left:5%;
+    padding-right: 5%;
+    
+    width: 80%;
     height: 100%;
     font-family: Segoe UI;
     box-shadow: 3px 3px lightgray;
     color: white;
- 
+      overflow: hidden;
     
 }
 h1{
         font-size:18px;
 }
 .style_contenu_filtre{
-    background-color: white;
     color: #65B3B3;
-    width: 50%;
-    float: left;
+    width: 70%;
     padding-left: 2%;
+    padding-top:  2%;
+    padding-bottom: 2%;
+    background-color: white;
+    
+    border-radius: 25px;
 
+    float: left;
+}
+
+.left{
+    float: left;
 }
 
 .style_boutons_recherche{
     width: 20%;
-    float: right;
+    float:right;
 }
 
 .style_recherche{
     font-family: Segoe UI;
+    font-weight: bolder;
     width: 70%;
 
 }
