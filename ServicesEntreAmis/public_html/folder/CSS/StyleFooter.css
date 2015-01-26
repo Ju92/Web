@@ -10,9 +10,34 @@ and open the template in the editor.
 
 
 .style_Footer{
-    background-color: #CFF288;
+    background-color: #238383;
+    position:fixed;
+    bottom:0;
+    left:20%;
+    height:100px;    
     width: 60%;
-    height: 100%;
-    margin-left: 20%;
+  clear: both;	
+    overflow: hidden;
+}
+.left{
+    
+    padding-top: 5%;
+    padding-left: 15%;
+    float:left;
+}
+.right{
+    padding-top: 5%;
+    padding-left: 15%;
+    float:left;
+}
+.center{
+    padding-top: 5%;
+    padding-left: 15%;
+    float:left;
+
 }
 
+a{
+
+    color : #FFFFFF;
+}

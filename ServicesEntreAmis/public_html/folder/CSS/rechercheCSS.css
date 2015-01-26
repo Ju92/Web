@@ -8,32 +8,14 @@ and open the template in the editor.
     Author     : rambouju
 */
 
-.style_filtre{
-    background-color:#65B3B3;
 
-    margin-right: 2%;
-    margin-top:  2%;
-    margin-left: 2%;
-    margin-bottom: 2%;
-    padding-bottom: 2%;    
-    padding-top: 2%;    
-    padding-left:5%;
-    padding-right: 5%;
-    
-    width: 80%;
-    height: 100%;
-    font-family: Segoe UI;
-    box-shadow: 3px 3px lightgray;
-    color: white;
-      overflow: hidden;
-    
-}
+
 h1{
         font-size:18px;
 }
 .style_contenu_filtre{
     color: #65B3B3;
-    width: 70%;
+    width: 80%;
     padding-left: 2%;
     padding-top:  2%;
     padding-bottom: 2%;
@@ -44,9 +26,15 @@ h1{
     float: left;
 }
 
-.left{
-    float: left;
+.style_contenu{
+    background-color:#65B3B3; 
+    height: 100%;
+    font-family: Segoe UI;
+    box-shadow: 3px 3px lightgray;
+    color: white;
+      overflow: hidden;
 }
+
 
 .style_boutons_recherche{
     width: 20%;

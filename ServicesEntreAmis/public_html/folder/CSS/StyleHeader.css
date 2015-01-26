@@ -13,20 +13,25 @@ and open the template in the editor.
     width: 60%;
     height: 100%;
     margin-left: 20%;
+    
 }
 
 .style_Title{
     color: #CFF288;
     font-family: Segoe UI;
+    clear: both;
 }
 
 .style_Buttons{
     background-color: #65B3B3;
+      overflow: hidden;
 }
 
 .style_groupeButton{
+    float:right;
 }
-
+.left{
+}
 .style_Button{
     background-color: #CFF288;
     margin-top: 2%;
