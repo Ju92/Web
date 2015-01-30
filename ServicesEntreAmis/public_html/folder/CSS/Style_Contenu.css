@@ -13,20 +13,19 @@ and open the template in the editor.
     font-family: Segoe UI;
     width:20%;
     height:100%;
-    background:#65B3B3;
+    padding-bottom: 2%;    
+    padding-top: 2%;    
+    padding-left:2%;
+    padding-right: 2%;
 }
 
 .right{
     float: right;
-    width: 60%;
-    margin-right: 2%;
-    margin-top:  2%;
-    margin-left: 2%;
-    margin-bottom: 2%;
+    width: 72%;
     padding-bottom: 2%;    
     padding-top: 2%;    
-    padding-left:5%;
-    padding-right: 5%;
+    padding-left:2%;
+    padding-right: 2%;
     font-family: Segoe UI;
     height: 100%;
 }
