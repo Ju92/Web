@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Contenu recherche</title>
+        <link rel="stylesheet" type="text/css" href="./CSS/rechercheCSS.css">
+        <link rel="stylesheet" type="text/css" href="./CSS/Style_Contenu.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script >
+            function f() {
+                elementTexte = document.createElement('p');
+                var test = document.getElementById("texte1").value;
+                var test2 = document.getElementById("type1").checked;
+                contenuTexte = document.createTextNode('Salut!!!!');
+                elementTexte.appendChild(contenuTexte);
+                var element = document.getElementById('contenu');
+                if (test == "") {
+                    alert("Veuillez entrer votre nom " + element);
+                } else
+                if (test2 == true) {
+                    alert("Type 1");
+                }
+                if (document.getElementById("type2").checked == true) {
+                    alert("Type 2");
+                }
+                element.appendChild(elementTexte);
+            }
+
+            function g() {
+                document.getElementById('bouton1').style.background = "blue";
+            }
+
+            function function_load() {
+                var confirmer = document.getElementById("bouton1");
+                confirmer.addEventListener("click", f, false);
+                confirmer.addEventListener("press", g, false);
+            }
+
+        </script>
+    </head>
+    <body class="style_recherche" onload="function_load()">
+
+        <nav class="left"> nav </nav>
+        <div class="right">
+            <section id="filtre" class="style_contenu">
+                <!DOCTYPE html>
+                <article id="filtres" class="right">
+                    <h1>Rechercher</h1>
+                    <article id="recherche"  class="style_contenu_filtre">
+                        <p id="contenu_recherche" > Contenu recherche Filtre</p>
+                        <form id="type_recherche" class="style_contenu_filtre">
+                            <label> Type de recherche</label>
+                            <input type="radio" name="type" id="type1" />
+                            <label for ="type1">Type 1</label>
+                            <input type="radio" name="type" id="type2"/>
+                            <label for ="type2">Type 2</label>
+                            <br>
+                            <label for="test" >Nom</label>
+                            <input type="text" name="test" id="texte1"/>
+
+                        </form>  
+                    </article>
+                    <nav id="soumission_recherche" class="style_boutons_recherche">
+                        <button id="bouton1" title="rechercher_element">Bouton 1</button>
+                        <button id="bouton2" title="rechercher_tous_les_elements">Bouton 2</button>
+                    </nav>
+                </article>
+
+            </section>
+            <br>
+            <section id="resultats" class="style_tableau_resultat">
+                <table id="resultats_profils">
+                    <caption>Contenu des resultats</caption>
+                    <th>Colonne 1</th>
+                    <th>Colonne 2</th>
+                </table>
+            </section>
+        </div>
+    </body>
+</html>

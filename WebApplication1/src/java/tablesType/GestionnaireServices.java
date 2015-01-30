@@ -21,10 +21,10 @@ public class GestionnaireServices {
 
     public void creerServices() {
         ArrayList<Service> services = new ArrayList<>();
-        creeService(1, "Bob", "Marley", "boby", 26, services, "boby", 1, "Blois", "coucou");
+        creeService(1, "Jardinier", "3 mois", "200€", "je suis gentil");
     }
 
-    public Utilisateur creeService(int id, String nom, String duree,
+    public Service creeService(int id, String nom, String duree,
             String tarif, String description) {
         Service s = new Service(id, nom, duree,tarif, description);
         em.persist(s);
@@ -33,7 +33,7 @@ public class GestionnaireServices {
 
     public Collection<Utilisateur> getAllUsers() {
         // Exécution d'une requête équivalente à un select *  
-        Query q = em.createQuery("select u from Utilisateur u");
+        Query q = em.createQuery("select s from Service s");
         return q.getResultList();
     }
     // Add business logic below. (Right-click in editor and choose  

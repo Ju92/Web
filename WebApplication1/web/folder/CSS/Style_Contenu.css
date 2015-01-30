@@ -1,0 +1,32 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26 janv. 2015, 09:37:15
+    Author     : adrien
+*/
+
+.left{
+    float: left;
+    font-family: Segoe UI;
+    width:20%;
+    height:100%;
+    background:#65B3B3;
+}
+
+.right{
+    float: right;
+    width: 60%;
+    margin-right: 2%;
+    margin-top:  2%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    padding-bottom: 2%;    
+    padding-top: 2%;    
+    padding-left:5%;
+    padding-right: 5%;
+    font-family: Segoe UI;
+    height: 100%;
+}
