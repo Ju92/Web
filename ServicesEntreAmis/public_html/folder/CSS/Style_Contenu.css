@@ -8,14 +8,17 @@ and open the template in the editor.
     Author     : adrien
 */
 
-
 .left{
     float: left;
     font-family: Segoe UI;
+    width:20%;
+    height:100%;
+    background:#65B3B3;
 }
+
 .right{
     float: right;
-    width: 80%;
+    width: 60%;
     margin-right: 2%;
     margin-top:  2%;
     margin-left: 2%;
